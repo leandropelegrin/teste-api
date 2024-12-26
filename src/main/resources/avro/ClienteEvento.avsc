@@ -1,0 +1,23 @@
+{
+  "namespace": "br.com.teste.event",
+  "name": "ClienteEvento",
+  "type": "record",
+  "fields": [
+    {
+      "name": "nome",
+      "type": "string"
+    },
+    {
+      "name": "telefone",
+      "type": "string"
+    },
+    {
+      "name": "email",
+      "type": "string"
+    },
+    {
+      "name": "cargo",
+      "type": "string"
+    }
+  ]
+}

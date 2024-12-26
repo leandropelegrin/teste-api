@@ -28,6 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
+		<avro.version>1.11.0</avro.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -49,6 +50,24 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
+		<!--<dependency>
+			<groupId>org.apache.avro</groupId>
+			<artifactId>avro</artifactId>
+			<version>${avro.version}</version>
+		</dependency>-->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<!--<dependency>
+			<groupId>org.pitest</groupId>
+			<artifactId>pitest</artifactId>
+			<version>1.6.8</version>
+		</dependency>-->
 	</dependencies>
 
 	<build>
@@ -61,6 +80,40 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
+			<!--<plugin>
+				<groupId>org.pitest</groupId>
+				<artifactId>pitest-maven</artifactId>
+				<version>1.4.3</version>
+
+				<executions>
+					<execution>
+						<id>pit-report</id>
+						&lt;!&ndash; optional, this example attached the goal into mvn test phase &ndash;&gt;
+						<phase>test</phase>
+						<goals>
+							<goal>mutationCoverage</goal>
+						</goals>
+					</execution>
+				</executions>
+
+				&lt;!&ndash; https://github.com/hcoles/pitest/issues/284 &ndash;&gt;
+				&lt;!&ndash; Need this to support JUnit 5 &ndash;&gt;
+				<dependencies>
+					<dependency>
+						<groupId>org.pitest</groupId>
+						<artifactId>pitest-junit5-plugin</artifactId>
+						<version>0.8</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<targetClasses>
+						<param>com.mkyong.examples.*</param>
+					</targetClasses>
+					<targetTests>
+						<param>com.mkyong.examples.*</param>
+					</targetTests>
+				</configuration>
+			</plugin>-->
 		</plugins>
 	</build>
 
